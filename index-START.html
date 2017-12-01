@@ -136,6 +136,64 @@
       truck: 0
     })
     console.log(transportatnion);
+
+    // ## Array Cardio Day 2
+
+  const peopleTwo = [
+    { name: 'Wes', year: 1988 },
+    { name: 'Kait', year: 1986 },
+    { name: 'Irv', year: 1970 },
+    { name: 'Lux', year: 2015 }
+  ];
+
+  const comments = [
+    { text: 'Love this!', id: 523423 },
+    { text: 'Super good', id: 823423 },
+    { text: 'You are the best', id: 2039842 },
+    { text: 'Ramen is my fav food ever', id: 123523 },
+    { text: 'Nice Nice Nice!', id: 542328 }
+  ];
+
+  // Some and Every Checks
+  // Array.prototype.some() // is at least one person 19 or older?
+  const adult = peopleTwo.some(function(people){
+    const year = (new Date()).getFullYear();
+    if(year - people.year >=19) {
+      return true;
+    }
+  })
+  console.log({adult})
+  // Array.prototype.every() // is everyone 19 or older?
+  const adultAll = peopleTwo.every(function(people){
+    const year = (new Date()).getFullYear();
+    if(year - people.year >=19) {
+      return true;
+    }
+  })
+  console.log({adultAll})
+  // Array.prototype.find()
+  // Find is like filter, but instead returns just the one you are looking for
+  // find the comment with the ID of 823423
+
+  const id = comments.find(function(comment) {
+    if(comment.id === 823423) {
+      return true;
+    }
+  });
+  console.log(id);
+  // Array.prototype.findIndex()
+  // Find the comment with this ID
+  // delete the comment with the ID of 823423
+  const index = comments.findIndex(function (comment){
+    if(comment.id === 823423){
+      return true;
+    }
+  })
+  console.log(comments);
+  comments.splice(index, 1);
+  console.log(index);
+  console.log(comments);
+
   </script>
 </body>
 </html>
